@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap');
+
+@import 'helpers/vars.scss';
+
+@import 'helpers/style-reset.scss';
+
+@import 'common/_common.scss';
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    background-color: $light-grey;
+}
+
+.wrapper {
+    min-height: 70vh;
+    padding: 15px;
+}
+

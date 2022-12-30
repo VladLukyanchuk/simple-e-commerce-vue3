@@ -1,0 +1,19 @@
+//accent colors
+$orange:#f3a41b;
+$dark-orange: #b65d14;
+$red: #ea434b;
+$blue: #55a8ec;
+
+//monochrome
+$white: #efefef;
+$black: #101010;
+$dark-grey: #3d3d3d;
+$light-grey: #eaeaea;
+$grey: #afafaf;
+
+//mixins
+
+@mixin icon-size() {
+    width: 30px;
+    height: 30px;
+}

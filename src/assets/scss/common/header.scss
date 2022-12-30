@@ -1,0 +1,59 @@
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 15px;
+  background-color: $white;
+  -webkit-box-shadow: -1px 1px 7.5px 1.5px rgba(#000000, 0.3);
+  -moz-box-shadow: -1px 1px 7.5px 1.5px rgba(#000000, 0.3);
+  box-shadow: -1px 1px 7.5px 1.5px rgba(#000000, 0.3);
+}
+
+.header__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  font-size: 24px;
+  color: $black;
+}
+
+.header__left-side {
+  justify-self: start;
+}
+
+.burger-icon {
+  @include icon-size;
+}
+
+.header__center {
+  justify-self: center;
+}
+.header__logo {
+  border: 1px solid $black;
+  padding: 0 10px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.header__right-side {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__links {
+  font-weight: 300;
+  margin-right: 10px;
+  display: flex;
+  font-size: 20px;
+}
+.header__log-in {
+}
+
+.shop-bag {
+}
+
+.shop-bag__icon {
+    @include icon-size;
+}
