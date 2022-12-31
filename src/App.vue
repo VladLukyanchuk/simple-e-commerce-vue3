@@ -1,37 +1,60 @@
 <template>
   <div class="wrapper">
-    <header class="header">
-      <div class="header__content">
-        <div class="header__left-side">
-          <a href="" class="header__burger">
-            <box-icon class="burger-icon" color="#101010" name="menu"></box-icon>
-          </a>
-        </div>
-        <div class="header__center">
-          <a href="/" class="header__logo">logo.</a>
-        </div>
-
-        <div class="header__right-side">
-          <ul class="header__links">
-            <li>
-              <a href="/log-in" class="header__log-in"> Log In </a>
-            </li>
-          </ul>
-          <a href="/shop-bag" class="shop-bag">
-            <box-icon
-              class="shop-bag__icon"
-              color="#101010"
-              name="shopping-bag"
-            ></box-icon>
-          </a>
+    <Header />
+    <main class="main">
+      <div class="main__content">
+        <div class="main__products">
+          <div class="main__product-cart">
+            <a  class="main__product-image" href="">
+              <img :src="require('./assets/images/cardigan#1/photo_2022-12-31_15-38-27.jpg')" alt="">
+            </a>
+            <div class="main__product-description">
+              <span class="main__product-title"></span>
+              <div class="main__product-prices">
+                <span class="main__product-price"></span>
+              </div>
+            </div>
+          </div>
+          <div class="main_product-item">
+            <a href="">
+              <img :src="require('./assets/images/cardigan#2/photo_2022-12-31_15-38-35.jpg')" alt="">
+            </a>
+          </div>
+          <div class="main_product-item">
+            <a href="">
+              <img :src="require('./assets/images/cardigan#3/photo_2022-12-31_15-38-19.jpg')" alt="">
+            </a>
+          </div>
+          <div class="main_product-item">
+            <a href="">
+              <img src="" alt="">
+            </a>
+          </div>
+          <div class="main_product-item">
+            <a href="">
+              <img src="" alt="">
+            </a>
+          </div>
+          <div class="main_product-item">
+            <a href="">
+              <img src="" alt="">
+            </a>
+          </div>
+          <div class="main_product-item">
+            <a href="">
+              <img src="" alt="">
+            </a>
+          </div>
         </div>
       </div>
-    </header>
+    </main>
   </div>
 </template>
 
 <script>
-export default {};
+import Header from './assets/components/header_component.vue';
+export default {
+  components: { Header },};
 </script>
 
 <style lang="scss">
