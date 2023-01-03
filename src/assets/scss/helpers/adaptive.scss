@@ -1,0 +1,13 @@
+@media (max-width:410px) {
+    .header__links {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 700px) {
+    .main__products {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(auto-fill,minmax(200px, auto));
+    }
+}

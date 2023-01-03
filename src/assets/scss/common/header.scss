@@ -47,11 +47,20 @@
   margin-right: 10px;
   display: flex;
   font-size: 20px;
+  a {
+    transition: all .3s;
+    padding: 5px;
+
+    &:hover {
+      border-bottom: 1px solid black;
+    }
+  }
 }
 .header__log-in {
 }
 
 .shop-bag {
+  cursor: pointer;
   position: relative;
 }
 
