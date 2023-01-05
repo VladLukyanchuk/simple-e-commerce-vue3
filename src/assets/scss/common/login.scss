@@ -1,0 +1,159 @@
+.pop-up {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.pop-up__container {
+  position: relative;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 800px;
+  font-size: 18px;
+  height: fit-content;
+  margin-top: 40px;
+  padding: 20px;
+  background-color: $white;
+}
+
+.close-btn {
+  width: 40px;
+  height: 40px;
+
+  cursor: pointer;
+  fill: $white;
+
+  background-color: $red;
+  border-radius: 50%;
+
+  &:hover,
+  :active {
+    background-color: $dark-red;
+  }
+}
+
+.close-btn_position {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+}
+
+.pop-up__nav {
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  //justify-items: center;
+}
+.pop-up__tab {
+  padding: 10px 20px;
+  background-color: $light-grey;
+  color: $dark-grey;
+  text-align: center;
+  transition: all 0.5s;
+
+  a {
+    color: $dark-grey;
+  }
+
+  &:hover {
+    background-color: $dark-orange;
+  }
+}
+
+.pop-up__tab_active {
+  background-color: $orange;
+  transition: all 0.3s;
+  a {
+    color: white;
+  }
+}
+
+.pop-up__log-in {
+}
+.pop-up__sign-up {
+}
+.pop-up__content {
+}
+.pop-up__title {
+  text-align: center;
+  font-size: 2em;
+  margin: 40px 0;
+}
+.pop-up__form {
+}
+.pop-up__top-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  //grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+  margin-bottom: 40px;
+}
+
+.pop-up__input {
+  position: relative;
+
+  label {
+    position: absolute;
+    transform: translateY(75%);
+    left: 13px;
+    color: $dark-grey;
+    transition: all 0.25s ease;
+    pointer-events: none;
+    font-size: 18px;
+    .req {
+      margin: 2px;
+      color: $orange;
+    }
+  }
+
+  .pop-up_active-label {
+    transform: translateY(50px);
+    left: 2px;
+    font-size: 14px;
+  }
+
+  input {
+    font-size: 20px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 10px 10px;
+    background: none;
+    background-image: none;
+    border: 1px solid $light-grey;
+    color: $black;
+    border-radius: 10px;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    &:focus {
+      outline: 0;
+      border-color: $orange;
+    }
+  }
+}
+
+.pop-up__first-name {
+}
+.req {
+}
+.pop-up__last-name {
+}
+.pop-up__email {
+  margin-bottom: 40px;
+}
+.pop-up__password {
+  margin-bottom: 40px;
+}
+.pop-up__submit {
+  display: block;
+  width: 50%;
+  padding: 20px;
+  margin: 0 auto;
+  background-color: $orange;
+  color: $white;
+  font-size: 20px;
+  transition: all 0.5s;
+
+  &:hover,
+  &:active {
+    background-color: $dark-orange;
+  }
+}

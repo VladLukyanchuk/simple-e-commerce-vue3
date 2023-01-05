@@ -1,8 +1,10 @@
 .header {
   position: fixed;
+  z-index: 100 ;
   top: 0;
   right: 0;
   left: 0;
+  z-index: 5;
   padding: 15px;
   background-color: $white;
   -webkit-box-shadow: -1px 1px 7.5px 1.5px rgba(#000000, 0.3);
@@ -47,9 +49,10 @@
   margin-right: 10px;
   display: flex;
   font-size: 20px;
+  cursor: pointer;
   a {
-    transition: all .3s;
     padding: 5px;
+    transition: all 0.1s;
 
     &:hover {
       border-bottom: 1px solid black;

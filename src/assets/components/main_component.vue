@@ -9,6 +9,7 @@
           :name="product.name"
           :price="`${product.price} $`"
           :imgURL="product.imgURL"
+          :link="`/${product.alias}`"
         />
       </div>
     </div>

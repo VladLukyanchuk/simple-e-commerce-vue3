@@ -13,7 +13,7 @@
         <div class="header__right-side">
           <ul class="header__links">
             <li>
-              <a href="/log-in" class="header__log-in"> Log In </a>
+              <router-link to="/login" class="header__log-in"> Log In </router-link>
             </li>
           </ul>
           <shop_bag />
@@ -25,8 +25,7 @@
 <script>
 import shop_bag from './UI/shop_bag.vue'
 export default {
-  components: { shop_bag },
-    
+  components: { shop_bag }, 
 }
 </script>
 

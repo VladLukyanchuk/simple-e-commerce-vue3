@@ -1,0 +1,15 @@
+.footer {
+    height: 20px;
+    padding: 20px;
+    background-color: $white;
+}
+.container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer__text {
+    display: block;
+    color: $black;
+}
