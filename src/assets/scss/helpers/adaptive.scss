@@ -31,7 +31,11 @@
   }
 }
 
-@media (min-width: 700px) {
+@media (max-width: 700px) {
+  .product-card {
+    grid-template-columns: 1fr;
+}
+
   .main__products {
     display: grid;
     gap: 20px;
