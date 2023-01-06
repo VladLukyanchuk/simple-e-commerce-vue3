@@ -20,15 +20,14 @@
   gap: 10px;
 }
 .main__product-cart {
+
   border-radius: 10px;
   padding: 10px;
-  background-color: $white;
+  background-color: $light-grey;
   transition: all 0.3s;
   cursor: pointer;
 
-  -webkit-box-shadow: 0.5px 1px 16.5px -9px #ffffff;
-  -moz-box-shadow: 0.5px 1px 16.5px -9px #ffffff;
-  box-shadow: 0.5px 1px 16.5px -9px #ffffff;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
 
   &:hover {
     transform: scale(1.025);
