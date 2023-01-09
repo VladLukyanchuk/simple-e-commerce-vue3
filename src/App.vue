@@ -9,7 +9,6 @@
 </template>
 
 <script>
-//import Login from "./assets/components/log-in_pop-up.vue"
 import Header from "./assets/components/header_component.vue";
 import Footer from "./assets/components/footer_component.vue";
 

@@ -16,7 +16,9 @@
               <router-link to="/login" class="header__log-in"> Log In </router-link>
             </li>
           </ul>
-          <shop_bag />
+          <router-link to="/shop-bag"> 
+            <shop_bag />
+          </router-link>
         </div>
       </div>
     </header>
@@ -24,8 +26,9 @@
 
 <script>
 import shop_bag from './UI/shop_bag.vue'
+
 export default {
-  components: { shop_bag }, 
+  components: { shop_bag,},
 }
 </script>
 

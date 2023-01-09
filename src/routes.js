@@ -5,19 +5,25 @@ const routerHistory = createWebHistory();
 import Login from "@/assets/components/log-in_pop-up";
 import Home from "@/assets/pages/home_page"
 import Product from "@/assets/pages/_productAlias";
+import ShopBag from "@/assets/components/shop_bag";
 
 const routers = createRouter({
   history: routerHistory,
   routes: [
+    {
+      path: "/",
+      name: "home",
+      component: Home,
+    },
     {
       path: "/login",
       name: "login",
       component: Login,
     },
     {
-      path: "/",
-      name: "home",
-      component: Home,
+      path: "/shop-bag",
+      name: "shop-bag",
+      component: ShopBag,
     },
     {
       path: "/:productAlias",
