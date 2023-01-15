@@ -9,6 +9,17 @@
   }
 }
 
+@media screen and (max-width: 700px) {
+  .cart__grid-elements {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .product-card {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media screen and (max-width: 415px) {
   .product-card__images {
     padding: 20px 0;

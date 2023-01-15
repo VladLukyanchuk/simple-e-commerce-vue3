@@ -2,13 +2,19 @@
   <div class="product-card">
     <div class="product-card__images">
       <div class="product-card__active-img">
-        <img :src="currentPhoto || product.imgURL[0]" alt="" />
+        <img :src="currentPhoto" alt="" />
       </div>
-      <div class="product-card__all-img" @click="changeActiveImg">
-        <img :src="product.imgURL[0]" alt="" />
-        <img :src="product.imgURL[1]" alt="" />
-        <img :src="product.imgURL[2]" alt="" />
-        <img v-if="product.imgURL[3]" :src="product.imgURL[3]" alt="" />
+      <div class="product-card__all-img">
+        <div v-for="(img, index) in product.imgURL" :key="index">
+          <img
+            :src="img"
+            alt="product photo"
+            @click="changeActiveImg(index)"
+            :class="{
+              'product-card_active-img': img === currentPhoto,
+            }"
+          />
+        </div>
       </div>
     </div>
     <div class="product-card__info">
@@ -89,33 +95,7 @@
           </div>
         </div>
         <div class="product-card__quantity">
-          <button class="product-card__delete" @click="deleteOne">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              class="product-card__quantity-icon"
-            >
-              <path
-                d="m4.431 12.822 13 9A1 1 0 0 0 19 21V3a1 1 0 0 0-1.569-.823l-13 9a1.003 1.003 0 0 0 0 1.645z"
-              ></path>
-            </svg>
-          </button>
-          <div class="product-card__number">{{ quantity }}</div>
-          <button class="product-card__add" @click="addOne">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              class="product-card__quantity-icon"
-            >
-              <path
-                d="M5.536 21.886a1.004 1.004 0 0 0 1.033-.064l13-9a1 1 0 0 0 0-1.644l-13-9A1 1 0 0 0 5 3v18a1 1 0 0 0 .536.886z"
-              ></path>
-            </svg>
-          </button>
+          <Number @quantityChange="quantityChange"/>
         </div>
         <button class="product-card__buy" @click="addToCart">
           Add To Cart
@@ -135,8 +115,10 @@
 /* eslint-disable */
 
 import products from "@/seeders/products";
+import Number from "@/assets/components/UI/input_number.vue"
 
 export default {
+  components: {Number},
   data() {
     return {
       product: null,
@@ -152,50 +134,29 @@ export default {
 
     if (item) {
       this.product = item;
+      this.currentPhoto = item.imgURL[0];
     }
   },
 
+  computed: {},
+
   methods: {
-    addOne() {
-      if (this.quantity >= 0) {
-        this.quantity += 1;
-      }
+    quantityChange(value) {
+      this.quantity = value;
+      console.log(this.quantity)
     },
-    deleteOne() {
-      if (this.quantity >= 1) {
-        this.quantity -= 1;
-      }
-    },
-    changeActiveImg(event) {
-      this.currentPhoto = event.target.src;
+    changeActiveImg(i) {
+      this.currentPhoto = this.product.imgURL[i];
     },
     addToCart() {
-      let arr = [];
-
-      if(localStorage.getItem('cart')) {
-        arr = (JSON.parse(localStorage.getItem('cart')));
-      }
-
-      const obj = this.createNewObject();
-
-      arr.push(obj);
-      
-      console.log(obj.name);
-      localStorage.setItem('cart', JSON.stringify(arr));
+      //create obj
+      const productObj = {}
+      Object.assign(productObj, this.product)
+      productObj.quantity = this.quantity;
+      productObj.size = this.selectedSize;
+      //crated obj set to vuex product cart
+      this.$store.dispatch('setProduct', productObj);
     },
-
-    createNewObject() {
-      const productObj = {};
-
-      if (this.product) {
-        for (const key in this.product) {
-          productObj[key] = this.product[key];
-        }
-        productObj.quantity = this.quantity;
-      }
-
-      return productObj;
-    }
   },
 };
 </script>

@@ -7,7 +7,7 @@
           </a>
         </div>
         <div class="header__center">
-          <a href="/" class="header__logo">logo.</a>
+          <router-link to="/" class="header__logo">logo.</router-link>
         </div>
 
         <div class="header__right-side">
@@ -16,7 +16,7 @@
               <router-link to="/login" class="header__log-in"> Log In </router-link>
             </li>
           </ul>
-          <router-link to="/shop-bag"> 
+          <router-link to="/cart_component"> 
             <shop_bag />
           </router-link>
         </div>
@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import shop_bag from './UI/shop_bag.vue'
+import shop_bag from '@/assets/components/UI/shop_bag.vue'
 
 export default {
   components: { shop_bag,},

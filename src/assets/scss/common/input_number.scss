@@ -1,0 +1,37 @@
+.quantity__container {
+  display: grid;
+  grid-template-columns: 30px 1fr 30px;
+  align-items: center;
+  border: 2px solid $grey;
+  border-radius: 10px;
+  width: 100px;
+  overflow: hidden;
+}
+
+.quantity__input {
+  display: block;
+  text-align: center;
+  font-size: 20px;
+}
+
+.quantity__btn {
+  font-size: 24px;
+  background-color: inherit;
+  height: 100%;
+  width: 100%;
+  user-select: none;
+  cursor: pointer;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  color: $black;
+  border-style: none;
+
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    background-color: #cfd1d4;
+  }
+}

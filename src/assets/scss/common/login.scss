@@ -13,7 +13,9 @@
   height: fit-content;
   margin-top: 40px;
   padding: 20px;
-  background-color: $white;
+  background-color: transparent;
+  box-shadow: inset 5px 5px 10px #bebebe,
+            inset -5px -5px 10px #ffffff;
 }
 
 .close-btn {
@@ -46,13 +48,22 @@
 }
 .pop-up__tab {
   padding: 10px 20px;
-  background-color: $light-grey;
-  color: $dark-grey;
+  background-color: $grey;
   text-align: center;
   transition: all 0.5s;
 
+  &:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  &:last-child {
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
   a {
-    color: $dark-grey;
+    color: $white;
   }
 
   &:hover {
@@ -117,7 +128,7 @@
     width: 100%;
     height: 100%;
     padding: 10px 10px;
-    background: none;
+    background-color: white;
     background-image: none;
     border: 1px solid $light-grey;
     color: $black;
@@ -145,6 +156,7 @@
 .pop-up__submit {
   display: block;
   width: 50%;
+  border-radius: 20px;
   padding: 20px;
   margin: 0 auto;
   background-color: $orange;
