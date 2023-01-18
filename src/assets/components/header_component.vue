@@ -13,7 +13,11 @@
         <div class="header__right-side">
           <ul class="header__links">
             <li>
-              <router-link to="/login" class="header__log-in"> Log In </router-link>
+              <div v-if="getUser" class="header__user-container">
+                <box-icon class="header__user" name='user'></box-icon>
+                <span class="header__user-text">{{ getUser.name }}</span>
+              </div>
+              <router-link v-else to="/login" class="header__log-in" :class="{'header__active-link': this.activeLink === '/login' }" > Log In </router-link>
             </li>
           </ul>
           <router-link to="/cart_component"> 
@@ -29,6 +33,21 @@ import shop_bag from '@/assets/components/UI/shop_bag.vue'
 
 export default {
   components: { shop_bag,},
+  data() {
+    return {
+      activeLink: '',
+    }
+  },
+  computed: {
+    getUser() {
+      return this.$store.getters.getUser
+    }
+  },
+  watch: {
+    '$route'() {
+      this.activeLink = this.$route.path
+    }
+  }
 }
 </script>
 

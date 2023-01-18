@@ -23,27 +23,27 @@
           <span v-if="isLogIn">Welcome Back!</span>
           <span v-else>Sign Up For Free</span>
         </h1>
-        <form class="pop-up__form" @input="spanTransform" @change="checkInput">
-          <div v-if="isLogIn" class="pop-up__top-row">
+        <form class="pop-up__form" @submit.prevent="onSubmit" @input="spanTransform" @change="checkInput">
+          <div v-if="!isLogIn" class="pop-up__top-row">
             <div class="pop-up__input pop-up__first-name">
               <label> First Name<span class="req">*</span> </label>
-              <input type="text" required autocomplete="off" />
+              <input v-model="FormData.name" type="text" required autocomplete="off" />
             </div>
 
             <div class="pop-up__input pop-up__last-name">
               <label> Last Name<span class="req">*</span> </label>
-              <input type="text" required autocomplete="off" />
+              <input v-model="FormData.lastName" type="text" required autocomplete="off" />
             </div>
           </div>
 
           <div class="pop-up__input pop-up__email">
             <label> Email Address<span class="req">*</span> </label>
-            <input type="email" required autocomplete="off" />
+            <input v-model="FormData.email" type="email"  autocomplete="off" />
           </div>
 
           <div class="pop-up__input pop-up__password">
             <label> Set A Password<span class="req">*</span> </label>
-            <input type="password" required autocomplete="off" />
+            <input v-model="FormData.password" type="password"  autocomplete="off" />
           </div>
 
           <button type="submit" class="pop-up__submit">Get Started</button>
@@ -62,6 +62,12 @@ export default {
     return {
       isLogIn: true,
       isSignUp: false,
+      FormData: {
+        name: '',
+        lastName: '',
+        email: '',
+        password: '',
+      },
     };
   },
   methods: {
@@ -85,6 +91,9 @@ export default {
         const label = event.target.previousSibling;
         label.classList.remove("pop-up_active-label");
       }
+    },
+    onSubmit() {
+      this.$store.dispatch('setUser', this.FormData)
     }
   },
 };

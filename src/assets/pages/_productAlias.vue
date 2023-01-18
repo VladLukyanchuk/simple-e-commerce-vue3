@@ -97,9 +97,7 @@
         <div class="product-card__quantity">
           <Number @quantityChange="quantityChange"/>
         </div>
-        <button class="product-card__buy" @click="addToCart">
-          Add To Cart
-        </button>
+        <Buy @click="addToCart" :name="btnName"/>
       </div>
       <div class="product-card__bottom-container">
         <h3 class="product-card__description-title">Description</h3>
@@ -116,12 +114,14 @@
 
 import products from "@/seeders/products";
 import Number from "@/assets/components/UI/input_number.vue"
+import Buy from "@/assets/components/UI/buy_btn.vue"
 
 export default {
-  components: {Number},
+  components: {Number, Buy},
   data() {
     return {
       product: null,
+      btnName: 'Add to cart',
       currentPhoto: "",
       selectedSize: "S",
       quantity: 1,
@@ -143,7 +143,6 @@ export default {
   methods: {
     quantityChange(value) {
       this.quantity = value;
-      console.log(this.quantity)
     },
     changeActiveImg(i) {
       this.currentPhoto = this.product.imgURL[i];

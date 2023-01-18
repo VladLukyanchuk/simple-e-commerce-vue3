@@ -13,6 +13,11 @@ import 'boxicons'
 const app = createApp(App);
 
 app.use(routers);
-app.use(store)
+app.use(store);
+
+store.subscribe((mutation, state) => {
+	// Store the state object as a JSON string
+	localStorage.setItem('store', JSON.stringify(state));
+});
 
 app.mount('#app')

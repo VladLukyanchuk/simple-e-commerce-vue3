@@ -14,6 +14,9 @@ import Footer from "./assets/components/footer_component.vue";
 
 export default {
   components: { Header, Footer },
+  beforeCreate() {
+    this.$store.commit('initializationStore');
+  }
 };
 </script>
 

@@ -131,6 +131,13 @@
   font-weight: 500;
   justify-self: end;
 }
+
+.cart__no-items {
+  padding: 20px 0;
+  font-size: 20px;
+  text-align: center;
+}
+
 .cart__buy {
   align-self: start;
   border-radius: 10px;
@@ -149,21 +156,26 @@
 .cart__products-amount {
   display: flex;
   justify-content: space-between;
-  font-size: 20px;
   padding: 20px 0;
+  font-size: 20px;
 }
 .cart__discount-amount {
   display: flex;
   justify-content: space-between;
   font-size: 20px;
   padding: 20px 0;
+  padding-bottom: 40px;
 }
 .cart__payable {
   display: flex;
   justify-content: space-between;
+  border-top: 1px solid $grey;
   font-size: 22px;
   font-weight: 600;
   padding: 20px 0;
 }
-.cart__buy-btn {
+
+.cart__btn-buy {
+  display: flex;
+  justify-content: center;
 }

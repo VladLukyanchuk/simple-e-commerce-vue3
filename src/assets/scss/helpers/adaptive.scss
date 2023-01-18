@@ -21,15 +21,13 @@
 }
 
 @media screen and (max-width: 415px) {
-  .product-card__images {
-    padding: 20px 0;
+  .header__content {
+    display:flex;
+    justify-content: space-between;
   }
 
-  .header__links {
-    margin-right: 5px;
-    a {
-      padding: 0px;
-    }
+  .product-card__images {
+    padding: 20px 0;
   }
 
   .product-card {
@@ -37,7 +35,7 @@
 }
 
   .header__links {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .main__products {
