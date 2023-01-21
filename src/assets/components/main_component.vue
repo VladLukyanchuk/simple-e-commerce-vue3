@@ -2,9 +2,10 @@
   <main class="main">
     <div class="main__content">
       <h2 class="main__title">All Products</h2>
+      <filter-component @filterByPrice="filterByPrice" />
       <div class="main__products">
         <Card
-          v-for="product in products"
+          v-for="product in filter"
           :key="product.id"
           :name="product.name"
           :price="`${product.price} $`"
@@ -26,7 +27,18 @@ export default {
   data() {
     return {
       products,
+      filter: products
     };
+  },
+  methods: {
+    filterByPrice(arr) {
+      const filtered = this.products.filter((elem) => {
+        if (elem.price >= arr[0] && elem.price <= arr[1]) {
+          return true;
+        }
+      });
+      this.filter = filtered;
+    },
   },
 };
 </script>

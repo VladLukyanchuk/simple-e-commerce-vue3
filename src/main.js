@@ -2,6 +2,15 @@ import { createApp } from 'vue'
 
 import App from './App.vue'
 
+//components
+import Filter from '@/assets/components/UI/filter_component'
+//components
+
+
+import ElementPlus from 'element-plus'
+
+import 'element-plus/dist/index.css'
+
 import '@/assets/scss/main.scss'
 
 import routers from './routes'
@@ -12,6 +21,9 @@ import 'boxicons'
 
 const app = createApp(App);
 
+app.component('filter-component', Filter)
+
+app.use(ElementPlus)
 app.use(routers);
 app.use(store);
 

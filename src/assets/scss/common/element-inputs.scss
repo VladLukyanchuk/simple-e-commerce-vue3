@@ -1,0 +1,39 @@
+//slider
+.el-slider__runway {
+    background-color: $grey;
+    height: 2px;
+  }
+
+.el-slider__bar {
+    background-color: $dark-grey;
+    height: 2px;
+}
+
+.el-slider__button {
+    border: 2px solid $dark-grey;
+    background-color: white;
+}
+
+.el-slider__button-wrapper {
+    height: 32px;
+    width: 32px;
+}
+
+//multi-select
+
+.el-select-v2 {
+    display: block;
+    width: 100%;
+    color: $orange;
+}
+
+.el-select-v2__wrapper.is-focused {
+    border-color: $orange;
+}
+
+.el-select-dropdown.is-multiple .el-select-dropdown__option-item.is-selected {
+    color: $orange;
+    &::after {
+        color: red;
+    }
+}

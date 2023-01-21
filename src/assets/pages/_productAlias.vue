@@ -22,82 +22,31 @@
         <h2 class="product-card__title">{{ product.name }}</h2>
         <div class="product-card__price">Price: {{ product.price }} $</div>
         <div class="product-card__select-size">
-          <div class="product-card__sizes" @change="onChange">
-            <input
-              type="radio"
-              name="XS"
-              value="XS"
-              id="xs"
-              v-model="selectedSize"
-            />
-            <label
-              class="product-card__size"
-              :class="{ 'product-card__size_selected': selectedSize == 'XS' }"
-              for="xs"
-              >XS</label
-            >
-
-            <input
-              type="radio"
-              name="S"
-              value="S"
-              id="s"
-              v-model="selectedSize"
-            />
-            <label
-              class="product-card__size"
-              :class="{ 'product-card__size_selected': selectedSize == 'S' }"
-              for="s"
-              >S</label
-            >
-
-            <input
-              type="radio"
-              name="M"
-              value="M"
-              id="m"
-              v-model="selectedSize"
-            />
-            <label
-              class="product-card__size"
-              :class="{ 'product-card__size_selected': selectedSize == 'M' }"
-              for="m"
-              >M</label
-            >
-
-            <input
-              type="radio"
-              name="L"
-              value="L"
-              id="l"
-              v-model="selectedSize"
-            />
-            <label
-              class="product-card__size"
-              :class="{ 'product-card__size_selected': selectedSize == 'L' }"
-              for="l"
-              >L</label
-            >
-
-            <input
-              type="radio"
-              name="XL"
-              value="XL"
-              id="xl"
-              v-model="selectedSize"
-            />
-            <label
-              class="product-card__size"
-              :class="{ 'product-card__size_selected': selectedSize == 'XL' }"
-              for="xl"
-              >XL</label
-            >
+          <div class="product-card__sizes">
+            <div v-for="size in sizes" :key="size">
+              <input
+                type="radio"
+                :name="size"
+                :value="size"
+                :id="size"
+                v-model="selectedSize"
+                @click="onChange(size)"
+                :disabled="sizeDisabled(size)"
+              />
+              <label
+                class="product-card__size"
+                :disabled="sizeDisabled(size)"
+                :class="{ 'product-card__size_selected': selectedSize == size }"
+                :for="size"
+                >{{ size }}</label
+              >
+            </div>
           </div>
         </div>
         <div class="product-card__quantity">
-          <Number @quantityChange="quantityChange"/>
+          <Number @quantityChange="quantityChange" />
         </div>
-        <Buy @click="addToCart" :name="btnName"/>
+        <Buy @click="addToCart" :name="btnName" />
       </div>
       <div class="product-card__bottom-container">
         <h3 class="product-card__description-title">Description</h3>
@@ -107,24 +56,28 @@
       </div>
     </div>
   </div>
+  <el-alert title="success alert" type="success" />
 </template>
 
 <script>
 /* eslint-disable */
 
 import products from "@/seeders/products";
-import Number from "@/assets/components/UI/input_number.vue"
-import Buy from "@/assets/components/UI/buy_btn.vue"
+import sizes from "@/seeders/sizes";
+import Number from "@/assets/components/UI/input_number.vue";
+import Buy from "@/assets/components/UI/buy_btn.vue";
 
 export default {
-  components: {Number, Buy},
+  components: { Number, Buy },
   data() {
     return {
       product: null,
-      btnName: 'Add to cart',
+      sizes,
+      btnName: "Add to cart",
       currentPhoto: "",
-      selectedSize: "S",
+      selectedSize: '',
       quantity: 1,
+      popover: true,
     };
   },
 
@@ -135,10 +88,9 @@ export default {
     if (item) {
       this.product = item;
       this.currentPhoto = item.imgURL[0];
+      this.selectedSize = item.sizes[0]
     }
   },
-
-  computed: {},
 
   methods: {
     quantityChange(value) {
@@ -149,12 +101,22 @@ export default {
     },
     addToCart() {
       //create obj
-      const productObj = {}
-      Object.assign(productObj, this.product)
+      const productObj = {};
+      Object.assign(productObj, this.product);
       productObj.quantity = this.quantity;
       productObj.size = this.selectedSize;
       //crated obj set to vuex product cart
-      this.$store.dispatch('setProduct', productObj);
+      this.$store.dispatch("setProduct", productObj);
+    },
+    onChange(size) {
+      this.selectedSize = size;
+    },
+    sizeDisabled(size) {
+      if (this.product.sizes.find((elem) => elem == size)) {
+        return false;
+      } else {
+        return true;
+      }
     },
   },
 };

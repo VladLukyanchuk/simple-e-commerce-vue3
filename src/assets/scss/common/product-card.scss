@@ -60,6 +60,8 @@
 
 .product-card__info {
   padding: 20px;
+  position: sticky;
+  top: 0;
 }
 .product-card__top-container {
   display: flex;
@@ -99,17 +101,27 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  color: black;
   font-size: 16px;
   font-weight: 500;
   border-radius: 20%;
   background-color: $light-grey;
-  transition: all 0.3s;
+  transition: transform, background-color 0.3s;
 
   box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
 
   &:hover {
     border: 3px solid $grey;
     transform: scale(1.1);
+  }
+
+  &[disabled="true"] {
+    cursor: default;
+    color: $grey;
+    &:hover {
+      border: none;
+      transform: scale(1);
+    }
   }
 }
 
