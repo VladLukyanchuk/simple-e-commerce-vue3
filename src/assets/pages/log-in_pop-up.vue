@@ -93,7 +93,8 @@ export default {
       }
     },
     onSubmit() {
-      this.$store.dispatch('setUser', this.FormData)
+      this.$store.dispatch('setUser', this.FormData);
+      this.$router.push({path: '/'})
     }
   },
 };

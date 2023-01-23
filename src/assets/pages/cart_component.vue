@@ -55,7 +55,7 @@
 
 <script>
 import Number from '@/assets/components/UI/input_number.vue'
-import Buy from './UI/buy_btn.vue';
+import Buy from '@/assets/components/UI/buy_btn.vue';
 
 export default {
   components: {Number, Buy},

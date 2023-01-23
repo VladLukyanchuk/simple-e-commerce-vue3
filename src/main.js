@@ -2,9 +2,9 @@ import { createApp } from 'vue'
 
 import App from './App.vue'
 
-//components
+//Global components
 import Filter from '@/assets/components/UI/filter_component'
-//components
+// Global components
 
 
 import ElementPlus from 'element-plus'

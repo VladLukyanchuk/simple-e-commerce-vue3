@@ -3,7 +3,7 @@
     <div class="main__content">
       <h2 class="main__title">All Products</h2>
       <filter-component @filterByPrice="filterByPrice" />
-      <div class="main__products">
+      <section class="main__products">
         <Card
           v-for="product in filter"
           :key="product.id"
@@ -12,7 +12,7 @@
           :imgURL="product.imgURL"
           :link="`/${product.alias}`"
         />
-      </div>
+      </section>
     </div>
   </main>
 </template>

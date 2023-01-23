@@ -10,7 +10,7 @@
           <router-link to="/" class="header__logo">logo.</router-link>
         </div>
 
-        <div class="header__right-side">
+        <nav class="header__right-side">
           <ul class="header__links">
             <li>
               <div v-if="getUser" class="header__user-container">
@@ -23,7 +23,7 @@
           <router-link to="/cart_component"> 
             <shop_bag />
           </router-link>
-        </div>
+        </nav>
       </div>
     </header>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <div class="product-card">
-    <div class="product-card__images">
+    <section class="product-card__images">
       <div class="product-card__active-img">
         <img :src="currentPhoto" alt="" />
       </div>
@@ -16,8 +16,8 @@
           />
         </div>
       </div>
-    </div>
-    <div class="product-card__info">
+    </section>
+    <section class="product-card__info">
       <div class="product-card__top-container">
         <h2 class="product-card__title">{{ product.name }}</h2>
         <div class="product-card__price">Price: {{ product.price }} $</div>
@@ -54,9 +54,8 @@
           {{ product.description }}
         </div>
       </div>
-    </div>
+    </section>
   </div>
-  <el-alert title="success alert" type="success" />
 </template>
 
 <script>
@@ -66,6 +65,7 @@ import products from "@/seeders/products";
 import sizes from "@/seeders/sizes";
 import Number from "@/assets/components/UI/input_number.vue";
 import Buy from "@/assets/components/UI/buy_btn.vue";
+import { ElMessage } from 'element-plus'
 
 export default {
   components: { Number, Buy },
@@ -75,7 +75,7 @@ export default {
       sizes,
       btnName: "Add to cart",
       currentPhoto: "",
-      selectedSize: '',
+      selectedSize: "",
       quantity: 1,
       popover: true,
     };
@@ -88,7 +88,7 @@ export default {
     if (item) {
       this.product = item;
       this.currentPhoto = item.imgURL[0];
-      this.selectedSize = item.sizes[0]
+      this.selectedSize = item.sizes[0];
     }
   },
 
@@ -107,6 +107,13 @@ export default {
       productObj.size = this.selectedSize;
       //crated obj set to vuex product cart
       this.$store.dispatch("setProduct", productObj);
+
+      //alert message
+      ElMessage({
+        message: "Successfully added",
+        grouping: true,
+        type: "success",
+      });
     },
     onChange(size) {
       this.selectedSize = size;
