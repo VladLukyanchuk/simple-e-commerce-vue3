@@ -63,8 +63,8 @@
 
 import products from "@/seeders/products";
 import sizes from "@/seeders/sizes";
-import Number from "@/assets/components/UI/input_number.vue";
-import Buy from "@/assets/components/UI/buy_btn.vue";
+import Number from "@/assets/components/UI/NumberInput.vue";
+import Buy from "@/assets/components/UI/BuyButton.vue";
 import { ElMessage } from 'element-plus'
 
 export default {

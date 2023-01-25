@@ -3,7 +3,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 
 //Global components
-import Filter from '@/assets/components/UI/filter_component'
+import Filter from '@/assets/components/UI/FilterComponent'
 // Global components
 
 

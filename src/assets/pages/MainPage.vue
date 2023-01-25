@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import Card from "@/assets/components/UI/product_card";
+import Card from "@/assets/components/UI/ProductCard";
 
 import products from "@/seeders/products";
 

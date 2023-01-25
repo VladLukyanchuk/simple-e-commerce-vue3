@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import Main from '@/assets/pages/main_component'
+import Main from '@/assets/pages/MainPage'
 export default {
     components: {Main},
 }

@@ -2,10 +2,10 @@ import { createRouter, createWebHistory } from "vue-router";
 
 const routerHistory = createWebHistory();
 
-import Login from "@/assets/pages/log-in_pop-up";
-import Home from "@/assets/pages/home_page"
-import Product from "@/assets/pages/_productAlias";
-import Cart from "@/assets/pages/cart_component";
+import Login from "@/assets/pages/LoginPage";
+import Home from "@/assets/pages/HomePage";
+import Product from "@/assets/pages/TheProductAlias";
+import Cart from "@/assets/pages/CartPage";
 
 const routers = createRouter({
   history: routerHistory,

@@ -54,8 +54,8 @@
 </template>
 
 <script>
-import Number from '@/assets/components/UI/input_number.vue'
-import Buy from '@/assets/components/UI/buy_btn.vue';
+import Number from '@/assets/components/UI/NumberInput.vue'
+import Buy from '@/assets/components/UI/BuyButton.vue';
 
 export default {
   components: {Number, Buy},

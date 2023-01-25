@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import shop_bag from '@/assets/components/UI/shop_bag.vue'
+import shop_bag from '@/assets/components/UI/ShopBag.vue'
 
 export default {
   components: { shop_bag,},
