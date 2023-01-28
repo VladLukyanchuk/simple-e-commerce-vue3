@@ -1,4 +1,4 @@
-# watch-me_project
+# simple-e-commerce-vue3
 
 https://user-images.githubusercontent.com/122287665/215268682-46e2e701-adb7-48a0-b688-c0cd61dc4959.mp4
 
