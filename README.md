@@ -1,5 +1,7 @@
 # watch-me_project
 
+https://user-images.githubusercontent.com/122287665/215268682-46e2e701-adb7-48a0-b688-c0cd61dc4959.mp4
+
 ## Project setup
 ```
 npm install
